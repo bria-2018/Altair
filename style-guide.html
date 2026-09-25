@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altair Sign & Light | Minimal Full-Width Design System & Style Guide</title>
+  <meta name="description" content="Design system summary for Altair Sign & Light: Inter typography, full-width edge-to-edge section rules, minimal header, video hero banner specs, and color palette.">
+  
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- Top Architectural Utility Strip -->
+  <div class="top-utility-bar">
+    <div class="container top-utility-container">
+      <div class="top-utility-left">
+        <span>📍 Smyrna, GA (Serving Metro Atlanta for 20+ Years)</span>
+        <span class="utility-divider">•</span>
+        <span>📋 In-House Permitting & Owned Crane Fleet</span>
+      </div>
+      <div class="top-utility-right">
+        <span>🕒 Mon–Fri 8:00 AM – 5:00 PM | Emergency Service Available</span>
+        <span class="utility-divider">•</span>
+        <a href="tel:7709441114" class="top-utility-phone">📞 (770) 944-1114</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-wrapper">
+        <img src="assets/images/logo.png" alt="Altair Logo" class="logo-img">
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="style-guide.html" class="nav-link active">Style Guide</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-primary btn-sm">Main Site →</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero full-width-section">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="separator">/</span>
+          <span>Style Guide</span>
+        </div>
+        <h1 class="page-title">Minimal Full-Width Design System</h1>
+        <p class="page-description">
+          Documentation for Altair Sign & Light's website: Montserrat headings, Open Sans navigation & body copy, 1905x300 video banner specs, and full-width container rules.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-padding full-width-section bg-white">
+      <div class="container">
+        
+        <!-- SECTION 1: TYPOGRAPHY (MONTSERRAT & OPEN SANS) -->
+        <div style="margin-bottom: 4rem;">
+          <span class="section-tag">Brand Typography</span>
+          <h2 class="section-title">Montserrat & Open Sans Hierarchy</h2>
+          <p class="section-subtitle" style="margin-bottom: 2rem;">
+            Using Google Fonts <strong>Montserrat</strong> (Medium/SemiBold) for structural headings and <strong>Open Sans</strong> (Regular) for navigation menus and all body copy.
+          </p>
+
+          <div style="background-color: var(--color-light-bg); border-radius: var(--radius-md); padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--color-muted); text-transform: uppercase; font-weight: 600;">H1: Montserrat Bold (700)</span>
+              <h1 style="font-size: 2.8rem; color: var(--color-navy); font-family: var(--font-montserrat);">Stadium-Scale Signage & Commercial Lighting</h1>
+            </div>
+            <div>
+              <span style="font-size: 0.8rem; color: var(--color-muted); text-transform: uppercase; font-weight: 600;">H2: Montserrat SemiBold (600)</span>
+              <h2 style="font-size: 2.2rem; color: var(--color-navy); font-family: var(--font-montserrat);">Why Property Owners Choose Altair</h2>
+            </div>
+            <div>
+              <span style="font-size: 0.8rem; color: var(--color-muted); text-transform: uppercase; font-weight: 600;">H3: Montserrat Medium (500/600)</span>
+              <h3 style="font-size: 1.5rem; color: var(--color-navy); font-family: var(--font-montserrat);">Illuminated Channel Letters</h3>
+            </div>
+            <div>
+              <span style="font-size: 0.8rem; color: var(--color-muted); text-transform: uppercase; font-weight: 600;">Navigation & Body: Open Sans Regular (400)</span>
+              <p style="font-size: 1rem; color: var(--color-body); max-width: 800px; font-family: var(--font-open-sans);">
+                Altair Sign & Light has designed, permitted, fabricated, installed, and serviced commercial signage across Metro Atlanta for over 20 years. Single point of contact with zero vendor hand-offs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: COLOR PALETTE -->
+        <div style="margin-bottom: 4rem;">
+          <span class="section-tag">Color Palette</span>
+          <h2 class="section-title">Brand & Accent Hex Values</h2>
+
+          <div class="swatch-grid">
+            <div class="swatch-card">
+              <div class="swatch-color" style="background-color: #0073BA;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Logo Blue</div>
+                <div class="swatch-hex">#0073BA</div>
+              </div>
+            </div>
+
+            <div class="swatch-card">
+              <div class="swatch-color" style="background-color: #0073BA;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Logo Blue Accent</div>
+                <div class="swatch-hex">#0073BA</div>
+              </div>
+            </div>
+
+            <div class="swatch-card">
+              <div class="swatch-color" style="background-color: #0B0F19;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Pure Dark Charcoal</div>
+                <div class="swatch-hex">#0B0F19</div>
+              </div>
+            </div>
+
+            <div class="swatch-card">
+              <div class="swatch-color" style="background-color: #0F172A;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Deep Slate Headings</div>
+                <div class="swatch-hex">#0F172A</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer full-width-section">
+    <div class="container">
+      <!-- Primary Row: Unified Logo + Description Grid -->
+      <div class="footer-intro-grid">
+        <div class="footer-logo-col">
+          <img src="assets/images/logo-white.png" alt="Altair Sign & Light Logo" class="footer-logo-img">
+        </div>
+        <p class="footer-intro-text">
+          Altair Sign & Light has designed, permitted, fabricated, installed, and serviced commercial signage and lighting across Metro Atlanta for over 20 years.
+        </p>
+      </div>
+
+      <!-- Secondary Content Grid (4 Navigation Columns) -->
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="services.html#design-manufacturing">Design & Manufacturing</a>
+            <a href="services.html#installation">Crane & High-Rise Install</a>
+            <a href="services.html#repair-maintenance">Repair & Maintenance</a>
+            <a href="services.html#lighting-retrofit">Lighting & LED Retrofit</a>
+            <a href="services.html#permitting">Permit Expediting</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Products</h4>
+          <div class="footer-links">
+            <a href="products.html#outdoor">Channel Letters</a>
+            <a href="products.html#outdoor">Monument Signs</a>
+            <a href="products.html#outdoor">Pole & Pylon Signs</a>
+            <a href="products.html#outdoor">Digital LED Displays</a>
+            <a href="products.html#indoor">Lobby & Architectural Signs</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <div class="footer-links">
+            <a href="about.html">About Altair</a>
+            <a href="portfolio.html">Featured Portfolio</a>
+            <a href="style-guide.html">Design System</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Smyrna HQ Contact</h4>
+          <div class="footer-contact-item">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <div>Smyrna, GA (Serving Metro Atlanta)</div>
+          </div>
+          <div class="footer-contact-item">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <div><a href="tel:7709441114" style="color: white; font-weight: 600;">(770) 944-1114</a></div>
+          </div>
+          <div class="footer-contact-item" style="margin-top: 0.5rem;">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div><a href="mailto:ialarid@altairsign.com" style="color: white; font-weight: 500;">ialarid@altairsign.com</a></div>
+          </div>
+          <!-- Social Media Icons -->
+          <div class="footer-social-icons">
+            <a href="#" aria-label="Facebook" class="social-icon-link">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon-link">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social-icon-link">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" class="social-icon-link">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-icon-link">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 Altair Sign & Light. All Rights Reserved. Licensed Electrical Sign Contractor.
+          <span style="margin: 0 0.5rem; opacity: 0.5;">|</span>
+          Design & Developed by <a href="https://www.commercepundit.com/" target="_blank" rel="noopener" style="color: var(--color-primary-light); text-decoration: underline;">Commerce Pundit</a>.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="style-guide.html">Style Guide</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

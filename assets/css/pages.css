@@ -1,0 +1,400 @@
+/* ==========================================================================
+   Altair Sign & Light - Interior Page Styles (Minimal Full-Width Inter System)
+   ========================================================================== */
+
+/* Interior Page Hero Banner System with Intelligent Image Focal Overlay */
+.page-hero {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding-top: clamp(4.5rem, 7vw, 6.5rem);
+  padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.52;
+  filter: brightness(0.7) contrast(1.15);
+  transition: opacity var(--transition-normal);
+}
+
+/* Linear Dark Contrast Mask ensuring 100% text legibility over photography */
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(7, 11, 20, 0.94) 0%, rgba(7, 11, 20, 0.75) 50%, rgba(7, 11, 20, 0.4) 100%),
+              linear-gradient(180deg, rgba(7, 11, 20, 0.35) 0%, transparent 60%, rgba(7, 11, 20, 0.85) 100%);
+  pointer-events: none;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Page-Specific Background Images & Focal Positioning */
+.page-hero-services::before {
+  background-image: url('../images/banner-services.jpg');
+  background-position: right 30%;
+}
+
+.page-hero-products::before {
+  background-image: url('../images/banner-products.jpg');
+  background-position: right center;
+}
+
+.page-hero-portfolio::before {
+  background-image: url('../images/banner-portfolio.jpg');
+  background-position: center center;
+}
+
+.page-hero-about::before {
+  background-image: url('../images/banner-about.jpg');
+  background-position: right 40%;
+}
+
+.page-hero-contact::before {
+  background-image: url('../images/banner-contact.jpg');
+  background-position: right 25%;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-family: var(--font-open-sans);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumbs a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-primary-light);
+}
+
+.breadcrumbs .separator {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.page-title {
+  color: var(--color-white);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.75);
+}
+
+.page-description {
+  font-size: 1.15rem;
+  font-family: var(--font-open-sans);
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 760px;
+  line-height: 1.65;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+}
+
+/* Feature Split Sections (Services & Products) */
+.feature-split-section {
+  padding-top: clamp(4.5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(4.5rem, 8vw, 7.5rem);
+  border-bottom: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.feature-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.feature-split-grid.reverse {
+  direction: rtl;
+}
+
+.feature-split-grid.reverse > * {
+  direction: ltr;
+}
+
+.feature-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.feature-content p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-body);
+  margin-bottom: 1.5rem;
+}
+
+.feature-img-wrapper {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.feature-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.spec-item svg {
+  color: var(--color-accent);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.pull-quote {
+  background-color: var(--color-light-bg);
+  border-left: 3px solid var(--color-accent);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: 1.75rem 0;
+  font-size: 1.05rem;
+  color: var(--color-navy);
+  font-weight: 500;
+}
+
+/* Catalog Navigation Tabs */
+.catalog-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+  font-family: var(--font-inter);
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-accent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  color: var(--color-navy);
+}
+
+.tab-btn.active::after {
+  opacity: 1;
+}
+
+/* Product Catalog Grid */
+.product-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.product-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-img-wrapper {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.product-card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  align-self: flex-start;
+}
+
+.product-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.product-desc {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Contact Page Layout */
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5rem;
+}
+
+.contact-card-box {
+  background-color: var(--color-light-bg);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+}
+
+.contact-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-detail-row svg {
+  color: var(--color-accent);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.map-frame {
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.map-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style Guide Helpers */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.swatch-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.swatch-color {
+  height: 100px;
+}
+
+.swatch-info {
+  padding: 1rem;
+  background-color: var(--color-white);
+}
+
+.swatch-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-navy);
+}
+
+.swatch-hex {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+@media (max-width: 1024px) {
+  .feature-split-grid, .contact-page-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .feature-split-grid.reverse {
+    direction: ltr;
+  }
+  .product-catalog-grid, .swatch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .product-catalog-grid, .swatch-grid {
+    grid-template-columns: 1fr;
+  }
+}
