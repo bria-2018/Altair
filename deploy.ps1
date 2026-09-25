@@ -1,7 +1,8 @@
-# Deployment helper script
+# Automated deployment script for GitHub Pages
 param (
     [Parameter(Mandatory=$true)]
-    [string]$Token
+    [string]$Token,
+    [string]$RepoName = "Altair"
 )
 
 $headers = @{
@@ -10,41 +11,39 @@ $headers = @{
     "User-Agent"    = "Altair-Deployer"
 }
 
-Write-Host "1. Checking GitHub authentication..."
+Write-Host "1. Authenticating with GitHub..."
 try {
     $user = Invoke-RestMethod -Uri "https://api.github.com/user" -Headers $headers -Method Get
     $username = $user.login
-    Write-Host "Authenticated as GitHub User: $username"
+    Write-Host "SUCCESS: Authenticated as GitHub user '$username'"
 } catch {
-    Write-Error "Failed to authenticate with GitHub API: $_"
+    Write-Error "Authentication failed. Please check your token: $_"
     exit 1
 }
 
-$repoName = "altair-sign-light"
-Write-Host "2. Checking repository status for '$repoName'..."
-
+Write-Host "2. Checking repository status for '$username/$RepoName'..."
 try {
-    $repo = Invoke-RestMethod -Uri "https://api.github.com/repos/$username/$repoName" -Headers $headers -Method Get
-    Write-Host "Repository '$repoName' already exists on GitHub."
+    $repo = Invoke-RestMethod -Uri "https://api.github.com/repos/$username/$RepoName" -Headers $headers -Method Get
+    Write-Host "Repository '$username/$RepoName' already exists on GitHub."
 } catch {
-    Write-Host "Creating public repository '$repoName'..."
+    Write-Host "Repository does not exist yet. Creating public repository '$RepoName'..."
     $body = @{
-        name        = $repoName
-        description = "Altair Sign & Light Official Website"
+        name        = $RepoName
+        description = "Altair Sign & Light Official Commercial Signage Website"
         public      = $true
         has_issues  = $true
     } | ConvertTo-Json
 
     try {
         $repo = Invoke-RestMethod -Uri "https://api.github.com/user/repos" -Headers $headers -Method Post -Body $body
-        Write-Host "Repository '$repoName' created successfully!"
+        Write-Host "Repository '$RepoName' created successfully!"
     } catch {
-        Write-Error "Failed to create repository: $_"
+        Write-Error "Failed to create repository '$RepoName': $_"
         exit 1
     }
 }
 
-Write-Host "3. Setting up Git branch and remote..."
+Write-Host "3. Configuring local Git repository..."
 if (-not (Test-Path ".git")) {
     git init
 }
@@ -53,7 +52,7 @@ git branch -M main
 git config user.name "$username"
 git config user.email "$username@users.noreply.github.com"
 
-$remoteUrl = "https://$($Token)@github.com/$username/$repoName.git"
+$remoteUrl = "https://$($Token)@github.com/$username/$RepoName.git"
 git remote remove origin 2>$null
 git remote add origin $remoteUrl
 
@@ -61,7 +60,7 @@ Write-Host "4. Staging files and committing..."
 git add .
 git commit -m "Deploy Altair Sign & Light website"
 
-Write-Host "5. Pushing to GitHub..."
+Write-Host "5. Pushing files to GitHub repository ($username/$RepoName)..."
 git push -u origin main --force
 
 Write-Host "6. Enabling GitHub Pages..."
@@ -73,17 +72,18 @@ $pagesBody = @{
 } | ConvertTo-Json
 
 try {
-    $pages = Invoke-RestMethod -Uri "https://api.github.com/repos/$username/$repoName/pages" -Headers $headers -Method Post -Body $pagesBody
-    Write-Host "GitHub Pages enabled!"
+    $pages = Invoke-RestMethod -Uri "https://api.github.com/repos/$username/$RepoName/pages" -Headers $headers -Method Post -Body $pagesBody
+    Write-Host "GitHub Pages enabled successfully!"
 } catch {
-    Write-Host "GitHub Pages check complete."
+    Write-Host "GitHub Pages build initiated."
 }
 
-$pagesUrl = "https://$username.github.io/$repoName/"
+$pagesUrl = "https://$username.github.io/$RepoName/"
 Write-Host ""
-Write-Host "========================================="
-Write-Host "SUCCESS! Website live link:"
+Write-Host "=================================================================="
+Write-Host "🎉 SUCCESS! Your website is live and ready for public review:"
 Write-Host $pagesUrl
-Write-Host "Repository URL:"
-Write-Host "https://github.com/$username/$repoName"
-Write-Host "========================================="
+Write-Host ""
+Write-Host "Repository Link:"
+Write-Host "https://github.com/$username/$RepoName"
+Write-Host "=================================================================="
