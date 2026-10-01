@@ -37,7 +37,7 @@
 
   /* Layout Spacing Scale */
   --container-max: 1440px;
-  --header-height: 84px;
+  --header-height: 92px;
 
   /* Elevation & Glow Shadows */
   --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.03);
@@ -424,7 +424,8 @@ h5 { font-weight: 500; font-size: 1.1rem; }
 }
 
 .logo-img {
-  height: 48px;
+  height: 62px;
+  max-height: 62px;
   width: auto;
   object-fit: contain;
   transition: transform var(--transition-fast);
