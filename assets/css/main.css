@@ -445,7 +445,7 @@ h5 { font-weight: 500; font-size: 1.1rem; }
 .nav-link {
   font-family: var(--font-open-sans);
   font-size: 0.95rem;
-  font-weight: 400;
+  font-weight: 700;
   color: var(--color-navy);
   padding: 1.5rem 0;
   display: inline-flex;
