@@ -442,8 +442,8 @@
   border-color: rgba(0, 115, 186, 0.3);
 }
 
-.service-card-lg { grid-column: span 7; }
-.service-card-md { grid-column: span 5; }
+.service-card-lg { grid-column: span 6; }
+.service-card-md { grid-column: span 6; }
 .service-card-sm { grid-column: span 4; }
 
 .service-icon {
