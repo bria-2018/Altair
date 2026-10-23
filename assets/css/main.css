@@ -920,11 +920,11 @@ h5 { font-weight: 500; font-size: 1.1rem; }
 .header-container { gap: 1.5rem; }
 .logo-wrapper { flex-shrink: 0; }
 .nav-menu { gap: clamp(0.9rem, 1.5vw, 2rem); }
-.nav-link { font-size: 0.92rem; white-space: nowrap; }
+.nav-link { font-size: 0.82rem; white-space: nowrap; }
 .header-phone { white-space: nowrap; }
 @media (max-width: 1480px) { .header-phone { display: none; } }
 @media (max-width: 1240px) {
-  .nav-link { font-size: 0.86rem; }
+  .nav-link { font-size: 0.8rem; }
   .logo-img { height: 68px; max-height: 68px; }
 }
 @media (max-width: 1120px) {
@@ -932,3 +932,6 @@ h5 { font-weight: 500; font-size: 1.1rem; }
   .nav-menu { gap: 0.8rem; }
   .header-actions .btn-sm { padding-left: 1rem; padding-right: 1rem; }
 }
+
+/* Optical alignment: logo wordmark sits below the image centre, so nudge nav + actions to match */
+.nav-menu, .header-actions { position: relative; top: 7px; }
