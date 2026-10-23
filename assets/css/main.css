@@ -915,3 +915,20 @@ h5 { font-weight: 500; font-size: 1.1rem; }
     padding-bottom: 64px;
   }
 }
+
+/* ---- Header fit for 9-item navigation ---- */
+.header-container { gap: 1.5rem; }
+.logo-wrapper { flex-shrink: 0; }
+.nav-menu { gap: clamp(0.9rem, 1.5vw, 2rem); }
+.nav-link { font-size: 0.92rem; white-space: nowrap; }
+.header-phone { white-space: nowrap; }
+@media (max-width: 1480px) { .header-phone { display: none; } }
+@media (max-width: 1240px) {
+  .nav-link { font-size: 0.86rem; }
+  .logo-img { height: 68px; max-height: 68px; }
+}
+@media (max-width: 1120px) {
+  .logo-img { height: 58px; max-height: 58px; }
+  .nav-menu { gap: 0.8rem; }
+  .header-actions .btn-sm { padding-left: 1rem; padding-right: 1rem; }
+}
