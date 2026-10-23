@@ -249,3 +249,46 @@ function initModalListeners() {
     });
   });
 }
+
+/* ==========================================================================
+   Gallery Lightbox (product & portfolio pages)
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.lightbox-item'));
+  if (!items.length) return;
+
+  var overlay = document.createElement('div');
+  overlay.className = 'lb-overlay';
+  overlay.innerHTML = '<button class="lb-btn lb-close" aria-label="Close">&times;</button>' +
+    '<button class="lb-btn lb-prev" aria-label="Previous">&#8249;</button>' +
+    '<img alt="">' +
+    '<button class="lb-btn lb-next" aria-label="Next">&#8250;</button>' +
+    '<div class="lb-caption"></div>';
+  document.body.appendChild(overlay);
+
+  var img = overlay.querySelector('img');
+  var cap = overlay.querySelector('.lb-caption');
+  var index = 0;
+
+  function show(i) {
+    index = (i + items.length) % items.length;
+    img.src = items[index].getAttribute('href');
+    cap.textContent = (items[index].getAttribute('data-caption') || '') + '  (' + (index + 1) + ' / ' + items.length + ')';
+  }
+  function open(i) { show(i); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+  items.forEach(function (a, i) {
+    a.addEventListener('click', function (e) { e.preventDefault(); open(i); });
+  });
+  overlay.querySelector('.lb-close').addEventListener('click', close);
+  overlay.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(index - 1); });
+  overlay.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(index + 1); });
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') show(index + 1);
+  });
+});
